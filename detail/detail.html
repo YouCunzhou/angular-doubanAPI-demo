@@ -1,0 +1,39 @@
+<!-- 电影详情开始 -->
+<div class="detail">
+    <h1>{{data.title}}</h1>
+    <div class="dt-info">
+        <div class="dti-i">
+            <img ng-src="{{data.images.large}}" alt="">
+        </div>
+        <div class="dti-w">
+            <p>
+                <strong>导演：</strong>
+                <span ng-repeat="director in data.directors">{{director.name}} <span ng-if="!$last">、</span></span>
+            </p>
+            <p>
+                <strong>主演：</strong>
+                <span ng-repeat="cast in data.casts">{{cast.name}} <span ng-if="!$last">、</span></span>
+            </p>
+            <p><strong>类型：</strong>
+                <span ng-repeat="genre in data.genres">{{genre}}
+                    <span ng-if="!$last">、</span>
+                </span>
+            </p>
+            <p><strong>国家：</strong>
+                <span ng-repeat="countrie in data.countries">{{countrie}}
+                    <span ng-if="!$last">、</span>
+                </span>
+            </p>
+            <p><strong>评分：</strong>{{data.rating.average}}</p>
+            <p><strong>时间：</strong>{{data.year}}</p>
+            <p><strong>又名：</strong>
+                <span ng-repeat="akas in data.aka">{{akas}}
+                    <span ng-if="!$last">、</span>
+                </span>
+            </p>
+        </div>
+    </div>
+    <h3>剧情简介:</h3>
+    <p style="color:#f4365f;text-indent: 2em">{{data.summary}}</p>
+</div>
+<!-- 电影详情结束 -->
